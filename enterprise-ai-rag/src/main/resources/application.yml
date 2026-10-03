@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: enterprise-ai-rag
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/enterprise_rag
+    username: postgres
+    password: root
+
+  ai:
+    vectorstore:
+      pgvector:
+        initialize-schema: true
+        index-type: HNSW
+        dimensions: 768
+        distance-type: COSINE_DISTANCE
+
+    ollama:
+      base-url: http://localhost:11434
+      embedding:
+        options:
+          model: nomic-embed-text
+
+server:
+  port: 8082

@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: enterprise-ai-mcp-server
+
+  ai:
+    mcp:
+      server:
+        name: enterprise-ai-mcp-server
+        version: 1.0.0
+        protocol: STREAMABLE
+
+server:
+  port: 8081
+
+api:
+  base-url: http://localhost:8080

@@ -1,0 +1,19 @@
+CREATE TABLE products (
+    id BIGSERIAL PRIMARY KEY,
+
+    sku VARCHAR(100) NOT NULL UNIQUE,
+
+    name VARCHAR(200) NOT NULL,
+
+    description TEXT,
+
+    price_paise BIGINT NOT NULL CHECK (price_paise >= 0),
+
+    inventory INTEGER NOT NULL CHECK (inventory >= 0),
+
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    updated_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    version BIGINT NOT NULL DEFAULT 0
+);
